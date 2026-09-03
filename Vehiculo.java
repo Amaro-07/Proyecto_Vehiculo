@@ -19,7 +19,6 @@ public class Vehiculo {
             this.modelo = modelo;
         }
     }
-
     public String getModelo(){
         return this.modelo;
     }
@@ -28,7 +27,28 @@ public class Vehiculo {
         if (color == null) return;
         color = color.strip().toLowerCase();
         switch (color) {
-            case "rojo", "amarillo", "azul", "naranja", "negro", "blanco", "verde", "celeste":
+            case "rojo":
+                this.color = color;
+                break;
+            case "amarillo":
+                this.color = color;
+                break;
+            case "azul":
+                this.color = color;
+                break;
+            case "naranja":
+                this.color = color;
+                break;
+            case "negro":
+                this.color = color;
+                break;
+            case "blanco":
+                this.color = color;
+                break;
+            case "verde":
+                this.color = color;
+                break;
+            case "rosado":
                 this.color = color;
                 break;
             default:
@@ -36,20 +56,29 @@ public class Vehiculo {
                 break;
         }
     }
-    
     public String getColor(){
         return this.color;
     }
 
     public void setRuedas(int ruedas){
-        if (ruedas < 0){
-            System.out.println("El vehículo puede tener menos de 0 ruedas.");
+        if (ruedas <= 1){
+            System.out.println("El vehículo no puede tener menos de 1 rueda.");
         } else {
             this.ruedas = ruedas;
         }
     }
-
     public int getRuedas() {
         return this.ruedas;
+    }
+
+    public void setCapacidad(int capacidad){
+        if (capacidad < 1) {
+            System.out.println("El vehículo no debe tener una capacidad menor a 1");
+        } else {
+            this.capacidad = capacidad;
+        }
+    }
+    public int getCapacidad(){
+        return this.capacidad;
     }
 }
